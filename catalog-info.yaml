@@ -1,0 +1,63 @@
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: backstage
+spec:
+  owner: devops
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: backstage
+spec:
+  owner: devops
+  domain: backstage
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: backstage
+  annotations:
+    backstage.io/kubernetes-id: backstage
+    backstage.io/kubernetes-namespace: development
+    backstage.io/kubernetes-label-selector: 'app.kubernetes.io/instance=backstage'
+    backstage.io/techdocs-ref: dir:.
+    backstage.io/linguist: https://github.com/kwangil77/backstage.git
+    argocd/app-name: backstage
+    sonarqube.org/project-key: 'com.example:backstage'
+    vault.io/secrets-path: backstage
+    grafana/alert-label-selector: 'app=demo'
+    grafana/dashboard-selector: "title == 'Node.js Observability'"
+  links:
+  - url: https://github.com/kwangil77/backstage
+    title: Homepage
+    icon: home
+  - url: https://github.com/kwangil77/backstage
+    title: Source
+    icon: github
+spec:
+  type: service
+  lifecycle: experimental
+  owner: devops
+  system: backstage
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: kwangil77
+spec:
+  profile:
+    displayName: 하광일
+    email: kwangil77@hotmail.com
+  memberOf: [devops]
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: devops
+spec:
+  type: team
+  profile:
+    displayName: DevOps
+    email: devops@example.com
+  children: []
