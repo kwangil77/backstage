@@ -1,4 +1,4 @@
-FROM harbor.example.io/docker.io/library/node:20-bookworm AS builder
+FROM docker.io/library/node:20-bookworm AS builder
 LABEL maintainer="Kwangil Ha <kwangil77@hotmail.com>"
 ENV PYTHON /usr/bin/python3
 WORKDIR /src
@@ -11,7 +11,7 @@ RUN corepack enable \
     && tar xzf packages/backend/dist/skeleton.tar.gz -C packages/backend/dist/skeleton \
     && tar xzf packages/backend/dist/bundle.tar.gz -C packages/backend/dist/bundle
 
-FROM harbor.example.io/docker.io/library/node:20-bookworm AS nodejs
+FROM docker.io/library/node:20-bookworm AS nodejs
 LABEL maintainer="Kwangil Ha <kwangil77@hotmail.com>"
 ENV PYTHON /usr/bin/python3
 WORKDIR /src
@@ -20,7 +20,7 @@ RUN corepack enable \
     && yarn workspaces focus --all --production \
     && rm -rf "$(yarn cache clean)"
 
-FROM harbor.example.io/docker.io/library/node:20-bookworm-slim
+FROM docker.io/library/node:20-bookworm-slim
 LABEL maintainer="Kwangil Ha <kwangil77@hotmail.com>"
 ENV NODE_ENV production
 USER node
