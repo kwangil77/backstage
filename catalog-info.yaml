@@ -9,6 +9,13 @@ apiVersion: backstage.io/v1alpha1
 kind: System
 metadata:
   name: backstage
+  links:
+  - url: https://github.com/kwangil77/backstage
+    title: Homepage
+    icon: home
+  - url: https://github.com/kwangil77/backstage
+    title: Source
+    icon: github
 spec:
   owner: devops
   domain: backstage
