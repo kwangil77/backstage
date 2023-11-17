@@ -49,6 +49,17 @@ spec:
   system: backstage
 ---
 apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: backstage
+  annotations:
+    kubernetes.io/api-server: https://kubernetes.default
+spec:
+  type: cluster
+  owner: devops
+  system: backstage
+---
+apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
   name: kwangil77
