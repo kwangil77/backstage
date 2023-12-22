@@ -2857,6 +2857,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@backstage/catalog-client@npm:^1.5.1":
+  version: 1.5.1
+  resolution: "@backstage/catalog-client@npm:1.5.1"
+  dependencies:
+    "@backstage/catalog-model": ^1.4.3
+    "@backstage/errors": ^1.2.3
+    cross-fetch: ^4.0.0
+    uri-template: ^2.0.0
+  checksum: 786fa1bafba3d44d88855d8479879577e33816f1f9d2e110b275fc22ca4348f8dce0ebe789d580786a38e9986989c98172f7a07c1e2145b8da689608a2aa4ec2
+  languageName: node
+  linkType: hard
+
 "@backstage/catalog-model@npm:^1.2.1, @backstage/catalog-model@npm:^1.4.2, @backstage/catalog-model@npm:^1.4.3":
   version: 1.4.3
   resolution: "@backstage/catalog-model@npm:1.4.3"
@@ -3589,13 +3601,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/plugin-auth-backend@npm:^0.20.1":
-  version: 0.20.1
-  resolution: "@backstage/plugin-auth-backend@npm:0.20.1"
+"@backstage/plugin-auth-backend@npm:^0.20.2":
+  version: 0.20.2
+  resolution: "@backstage/plugin-auth-backend@npm:0.20.2"
   dependencies:
     "@backstage/backend-common": ^0.20.0
     "@backstage/backend-plugin-api": ^0.6.8
-    "@backstage/catalog-client": ^1.5.0
+    "@backstage/catalog-client": ^1.5.1
     "@backstage/catalog-model": ^1.4.3
     "@backstage/config": ^1.1.1
     "@backstage/errors": ^1.2.3
@@ -3645,7 +3657,7 @@ __metadata:
     uuid: ^8.0.0
     winston: ^3.2.1
     yn: ^4.0.0
-  checksum: 4ca5ca1d0a1541c806f5413298682f4e2472609c3bae35adde25db2b00afc4ea70f3a1defe24fef0daa379d9deec8fc8db7d88cd4d890119389941e4d5057744
+  checksum: 4a9a009d5938d36000ef2a27bc0dd1830ce2ecb5141f4f14361dfb0dde5e34bbc83e486d255f35e299b42024c331be892bfe0f5aaad6ccc3a6ffbb4783d90a82
   languageName: node
   linkType: hard
 
@@ -14151,12 +14163,12 @@ __metadata:
   dependencies:
     "@backstage/backend-common": ^0.20.0
     "@backstage/backend-tasks": ^0.5.13
-    "@backstage/catalog-client": ^1.5.0
+    "@backstage/catalog-client": ^1.5.1
     "@backstage/catalog-model": ^1.4.3
     "@backstage/cli": ^0.25.0
     "@backstage/config": ^1.1.1
     "@backstage/plugin-app-backend": ^0.3.56
-    "@backstage/plugin-auth-backend": ^0.20.1
+    "@backstage/plugin-auth-backend": ^0.20.2
     "@backstage/plugin-auth-node": ^0.4.2
     "@backstage/plugin-badges-backend": ^0.3.5
     "@backstage/plugin-catalog-backend": ^1.16.0
