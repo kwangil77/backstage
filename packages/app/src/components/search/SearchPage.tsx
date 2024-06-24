@@ -24,7 +24,7 @@ import {
   Page,
 } from '@backstage/core-components';
 import { useApi } from '@backstage/core-plugin-api';
-import { ToolSearchResultListItem } from '@backstage/plugin-explore';
+import { ToolSearchResultListItem } from '@backstage-community/plugin-explore';
 import BuildIcon from '@material-ui/icons/Build';
 
 const useStyles = makeStyles((theme: Theme) => ({

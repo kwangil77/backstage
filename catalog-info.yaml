@@ -33,7 +33,7 @@ metadata:
     argocd/app-name: backstage
     sonarqube.org/project-key: 'com.example:backstage'
     vault.io/secrets-path: backstage
-    grafana/alert-label-selector: 'app=demo'
+    grafana/alert-label-selector: 'app=backstage'
     grafana/dashboard-selector: "title == 'Node.js Observability'"
   links:
   - url: https://github.com/kwangil77/backstage

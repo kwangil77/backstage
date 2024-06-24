@@ -31,7 +31,7 @@ import LayersIcon from '@material-ui/icons/Layers';
 import MoneyIcon from '@material-ui/icons/MonetizationOn';
 import { MyGroupsSidebarItem } from '@backstage/plugin-org';
 import GroupIcon from '@material-ui/icons/People';
-import { Shortcuts } from '@backstage/plugin-shortcuts';
+import { Shortcuts } from '@backstage-community/plugin-shortcuts';
 
 const useSidebarLogoStyles = makeStyles({
   root: {
@@ -85,7 +85,6 @@ export const Root = ({ children }: PropsWithChildren<{}>) => (
         <SidebarDivider />
         <SidebarScrollWrapper>
           <SidebarItem icon={MapIcon} to="tech-radar" text="Tech Radar" />
-          <SidebarItem icon={MoneyIcon} to="opencost" text="OpenCost" />
         </SidebarScrollWrapper>
         <SidebarDivider />
         <Shortcuts allowExternalLinks />

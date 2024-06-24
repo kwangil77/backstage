@@ -1,5 +1,5 @@
 import { TaskScheduleDefinition } from '@backstage/backend-tasks';
-import { createRouter } from '@backstage/plugin-linguist-backend';
+import { createRouter } from '@backstage-community/plugin-linguist-backend';
 import { Router } from 'express';
 import type { PluginEnvironment } from '../types';
 

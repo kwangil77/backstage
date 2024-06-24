@@ -13,7 +13,7 @@ import {
 import { ScaffolderPage, scaffolderPlugin } from '@backstage/plugin-scaffolder';
 import { orgPlugin } from '@backstage/plugin-org';
 import { SearchPage } from '@backstage/plugin-search';
-import { TechRadarPage } from '@backstage/plugin-tech-radar';
+import { TechRadarPage } from '@backstage-community/plugin-tech-radar';
 import {
   TechDocsIndexPage,
   techdocsPlugin,
@@ -38,11 +38,10 @@ import { ProxiedSignInPage, SignInPage } from '@backstage/core-components';
 import { configApiRef, useApi } from '@backstage/core-plugin-api';
 import HomeIcon from '@material-ui/icons/Home';
 
-import { badgesPlugin } from '@backstage/plugin-badges';
+import { badgesPlugin } from '@backstage-community/plugin-badges';
 import { DevToolsPage } from '@backstage/plugin-devtools';
-import { ExplorePage } from '@backstage/plugin-explore';
-import { OpenCostPage } from '@backstage/plugin-opencost';
-import { shortcutsPlugin } from '@backstage/plugin-shortcuts';
+import { ExplorePage } from '@backstage-community/plugin-explore';
+import { shortcutsPlugin } from '@backstage-community/plugin-shortcuts';
 
 const app = createApp({
   components: {
@@ -125,7 +124,6 @@ const routes = (
     <Route path="/catalog-graph" element={<CatalogGraphPage />} />
     <Route path="/devtools" element={<DevToolsPage />} />
     <Route path="/explore" element={<ExplorePage />} />
-    <Route path="/opencost" element={<OpenCostPage />} />
   </FlatRoutes>
 );
 

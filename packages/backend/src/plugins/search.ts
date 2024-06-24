@@ -8,7 +8,7 @@ import { PluginEnvironment } from '../types';
 import { DefaultCatalogCollatorFactory } from '@backstage/plugin-catalog-backend';
 import { DefaultTechDocsCollatorFactory } from '@backstage/plugin-techdocs-backend';
 import { Router } from 'express';
-import { ToolDocumentCollatorFactory } from '@backstage/plugin-explore-backend';
+import { ToolDocumentCollatorFactory } from '@backstage-community/plugin-explore-backend';
 
 export default async function createPlugin(
   env: PluginEnvironment,

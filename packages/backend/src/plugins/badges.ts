@@ -1,7 +1,7 @@
 import {
   createRouter,
   createDefaultBadgeFactories,
-} from '@backstage/plugin-badges-backend';
+} from '@backstage-community/plugin-badges-backend';
 import { Router } from 'express';
 import { PluginEnvironment } from '../types';
 

@@ -31,7 +31,7 @@ import {
 import {
   isGithubActionsAvailable,
   EntityGithubActionsContent,
-} from '@backstage/plugin-github-actions';
+} from '@backstage-community/plugin-github-actions';
 import {
   EntityUserProfileCard,
   EntityGroupProfileCard,
@@ -63,17 +63,17 @@ import {
   EntityArgoCDOverviewCard,
   isArgocdAvailable
 } from '@roadiehq/backstage-plugin-argo-cd';
-import { EntitySonarQubeCard } from '@backstage/plugin-sonarqube';
-import { EntityVaultCard } from '@backstage/plugin-vault';
+import { EntitySonarQubeCard } from '@backstage-community/plugin-sonarqube';
+import { EntityVaultCard } from '@backstage-community/plugin-vault';
 import {
   isLinguistAvailable,
   EntityLinguistCard
-} from '@backstage/plugin-linguist';
+} from '@backstage-community/plugin-linguist';
 import {
   EntityGrafanaAlertsCard,
   EntityGrafanaDashboardsCard
 } from '@k-phoen/backstage-plugin-grafana';
-import { EntityBadgesDialog } from '@backstage/plugin-badges';
+import { EntityBadgesDialog } from '@backstage-community/plugin-badges';
 import BadgeIcon from '@material-ui/icons/CallToAction';
 import {
   isKubernetesClusterAvailable,
