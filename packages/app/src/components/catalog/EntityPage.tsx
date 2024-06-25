@@ -72,7 +72,7 @@ import {
 import {
   EntityGrafanaAlertsCard,
   EntityGrafanaDashboardsCard
-} from '@k-phoen/backstage-plugin-grafana';
+} from '@backstage-community/plugin-grafana';
 import { EntityBadgesDialog } from '@backstage-community/plugin-badges';
 import BadgeIcon from '@material-ui/icons/CallToAction';
 import {
@@ -386,8 +386,11 @@ const groupPage = (
         <Grid item xs={12} md={6}>
           <EntityOwnershipCard variant="gridItem" />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} md={6}>
           <EntityMembersListCard />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <EntityLinksCard />
         </Grid>
       </Grid>
     </EntityLayout.Route>

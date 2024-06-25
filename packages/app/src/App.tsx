@@ -27,15 +27,17 @@ import { entityPage } from './components/catalog/EntityPage';
 import { searchPage } from './components/search/SearchPage';
 import { Root } from './components/Root';
 
-import { AlertDisplay, OAuthRequestDialog } from '@backstage/core-components';
+import {
+  AlertDisplay,
+  OAuthRequestDialog,
+  SignInPage,
+} from '@backstage/core-components';
 import { createApp } from '@backstage/app-defaults';
 import { AppRouter, FlatRoutes } from '@backstage/core-app-api';
 import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';
 import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
 
-import { ProxiedSignInPage, SignInPage } from '@backstage/core-components';
-import { configApiRef, useApi } from '@backstage/core-plugin-api';
 import HomeIcon from '@material-ui/icons/Home';
 
 import { badgesPlugin } from '@backstage-community/plugin-badges';
@@ -44,22 +46,6 @@ import { ExplorePage } from '@backstage-community/plugin-explore';
 import { shortcutsPlugin } from '@backstage-community/plugin-shortcuts';
 
 const app = createApp({
-  components: {
-    SignInPage: props => {
-      const configApi = useApi(configApiRef);
-      if (configApi.getString('auth.environment') === 'development') {
-        return (
-          <SignInPage
-            {...props}
-            providers={['guest']}
-            title="Select a sign-in method"
-            align="center"
-          />
-        );
-      }
-      return <ProxiedSignInPage {...props} provider="oauth2Proxy" />;
-    },
-  },
   apis,
   plugins: [badgesPlugin, shortcutsPlugin],
   icons: {
@@ -81,6 +67,9 @@ const app = createApp({
     bind(orgPlugin.externalRoutes, {
       catalogIndex: catalogPlugin.routes.catalogIndex,
     });
+  },
+  components: {
+    SignInPage: props => <SignInPage {...props} auto providers={['guest']} />,
   },
 });
 
