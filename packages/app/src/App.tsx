@@ -30,13 +30,15 @@ import { Root } from './components/Root';
 import {
   AlertDisplay,
   OAuthRequestDialog,
-  SignInPage,
+  SignInProviderConfig,
+  SignInPage
 } from '@backstage/core-components';
 import { createApp } from '@backstage/app-defaults';
 import { AppRouter, FlatRoutes } from '@backstage/core-app-api';
 import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';
 import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
+import { oidcAuthApiRef } from './apis';
 
 import HomeIcon from '@material-ui/icons/Home';
 
@@ -45,7 +47,22 @@ import { DevToolsPage } from '@backstage/plugin-devtools';
 import { ExplorePage } from '@backstage-community/plugin-explore';
 import { shortcutsPlugin } from '@backstage-community/plugin-shortcuts';
 
+const keycloakProvider: SignInProviderConfig = {
+  id: 'keycloakProvider',
+  title: 'Keycloak SSO',
+  message: 'Sign in with Keycloak SSO',
+  apiRef: oidcAuthApiRef,
+};
 const app = createApp({
+  components: {
+    SignInPage: props => (
+      <SignInPage
+        {...props}
+        auto
+        provider={keycloakProvider}
+      />
+    ),
+  },
   apis,
   plugins: [badgesPlugin, shortcutsPlugin],
   icons: {
@@ -67,9 +84,6 @@ const app = createApp({
     bind(orgPlugin.externalRoutes, {
       catalogIndex: catalogPlugin.routes.catalogIndex,
     });
-  },
-  components: {
-    SignInPage: props => <SignInPage {...props} auto providers={['guest']} />,
   },
 });
 
