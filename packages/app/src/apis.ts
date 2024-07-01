@@ -43,7 +43,7 @@ export const apis: AnyApiFactory[] = [
           icon: () => null,
         },
         environment: configApi.getOptionalString('auth.environment'),
-        defaultScopes: ['openid', 'email,', 'profile,', 'groups'],
+        defaultScopes: ['openid'],
       }),
   }),
   createApiFactory(
