@@ -82,10 +82,13 @@ backend.add(import('@backstage/plugin-search-backend-module-techdocs/alpha'));
 
 backend.add(import('@backstage/plugin-kubernetes-backend/alpha'));
 backend.add(import('@backstage/plugin-devtools-backend'));
+
 backend.add(import('@backstage-community/plugin-sonarqube-backend'));
 backend.add(import('@backstage-community/plugin-vault-backend'));
 backend.add(import('@backstage-community/plugin-linguist-backend'));
 backend.add(import('@backstage-community/plugin-badges-backend'));
 backend.add(import('@backstage-community/plugin-explore-backend'));
+backend.add(import('@backstage-community/plugin-adr-backend'));
+backend.add(import('@backstage-community/search-backend-module-adr'));
 
 backend.start();

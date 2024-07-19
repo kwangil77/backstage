@@ -26,6 +26,7 @@ import {
 import { useApi } from '@backstage/core-plugin-api';
 import { ToolSearchResultListItem } from '@backstage-community/plugin-explore';
 import BuildIcon from '@material-ui/icons/Build';
+import { AdrSearchResultListItem } from '@backstage-community/plugin-adr';
 
 const useStyles = makeStyles((theme: Theme) => ({
   bar: {
@@ -72,6 +73,11 @@ const SearchPage = () => {
                   name: 'Documentation',
                   icon: <DocsIcon />,
                 },
+                {
+                  value: 'adr',
+                  name: 'Architecture Decision Records',
+                  icon: <DocsIcon />,
+                },
               ]}
             />
             <Paper className={classes.filters}>
@@ -116,6 +122,7 @@ const SearchPage = () => {
               <CatalogSearchResultListItem icon={<CatalogIcon />} />
               <TechDocsSearchResultListItem icon={<DocsIcon />} />
               <ToolSearchResultListItem icon={<BuildIcon />} />
+              <AdrSearchResultListItem icon={<DocsIcon />} />
             </SearchResult>
           </Grid>
         </Grid>

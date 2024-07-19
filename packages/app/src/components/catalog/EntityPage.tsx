@@ -79,6 +79,10 @@ import {
   isKubernetesClusterAvailable,
   EntityKubernetesClusterContent,
 } from '@backstage/plugin-kubernetes-cluster';
+import {
+  EntityAdrContent,
+  isAdrAvailable
+} from '@backstage-community/plugin-adr';
 
 const EntityLayoutWrapper = (props: { children?: ReactNode }) => {
   const [badgesDialogOpen, setBadgesDialogOpen] = useState(false);
@@ -260,6 +264,10 @@ const serviceEntityPage = (
     
     <EntityLayout.Route path="/argocd" title="Argo CD">
       <EntityArgoCDContent />
+    </EntityLayout.Route>
+
+    <EntityLayout.Route if={isAdrAvailable} path="/adrs" title="ADRs">
+      <EntityAdrContent />
     </EntityLayout.Route>
   </EntityLayoutWrapper>
 );
