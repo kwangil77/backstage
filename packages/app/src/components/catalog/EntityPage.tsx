@@ -58,11 +58,6 @@ import {
 import { TechDocsAddons } from '@backstage/plugin-techdocs-react';
 import { ReportIssue } from '@backstage/plugin-techdocs-module-addons-contrib';
 import { EntityKubernetesContent } from '@backstage/plugin-kubernetes';
-import {
-  EntityArgoCDContent,
-  EntityArgoCDOverviewCard,
-  isArgocdAvailable
-} from '@roadiehq/backstage-plugin-argo-cd';
 import { EntitySonarQubeCard } from '@backstage-community/plugin-sonarqube';
 import { EntityVaultCard } from '@backstage-community/plugin-vault';
 import {
@@ -205,13 +200,6 @@ const overviewContent = (
     <Grid item md={6} xs={12}>
       <EntityVaultCard />
     </Grid>
-    <EntitySwitch>
-      <EntitySwitch.Case if={e => Boolean(isArgocdAvailable(e))}>
-        <Grid item md={6} xs={12}>
-          <EntityArgoCDOverviewCard />
-        </Grid>
-      </EntitySwitch.Case>
-    </EntitySwitch>
 
     <Grid item md={6}>
       <EntityGrafanaAlertsCard />
@@ -262,10 +250,6 @@ const serviceEntityPage = (
       <EntityKubernetesContent refreshIntervalMs={30000} />
     </EntityLayout.Route>
     
-    <EntityLayout.Route path="/argocd" title="Argo CD">
-      <EntityArgoCDContent />
-    </EntityLayout.Route>
-
     <EntityLayout.Route if={isAdrAvailable} path="/adrs" title="ADRs">
       <EntityAdrContent />
     </EntityLayout.Route>
